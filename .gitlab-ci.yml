@@ -1,0 +1,59 @@
+stages:
+  - build
+  - test
+  - deploy
+
+docker:
+  stage: build
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  image: docker/compose:latest
+  script:
+    - COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose.yml build --parallel
+
+jest:
+  stage: test
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+  cache:
+    - key:
+        files:
+          - yarn.lock
+      paths:
+        - .yarn-cache/
+  image: node:16
+  script:
+    - yarn install --cache-folder .yarn-cache
+    - yarn build
+    - yarn test:ci
+
+  artifacts:
+    paths:
+      - dist
+    expire_in: 24 hrs
+
+chromatic:
+  stage: test
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+  cache:
+    - key:
+        files:
+          - yarn.lock
+      paths:
+        - .yarn-cache/
+  image: node:16
+  script:
+    # install
+    - yarn install --cache-folder .yarn-cache
+    - yarn chromatic
+
+    - yarn global add gitlab-comment
+    - gitlab-comment "storybook diff url https://www.chromatic.com/builds?appId=63a02e59c327a30f5d34de73&branch=$CI_MERGE_REQUEST_SOURCE_BRANCH_NAME"

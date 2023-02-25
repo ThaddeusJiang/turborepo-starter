@@ -1,0 +1,487 @@
+{
+  "info": {
+    "_postman_id": "5b3116ec-6f14-477b-a36b-6b6193536f0e",
+    "name": "turbo starter",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "9434176"
+  },
+  "item": [
+    {
+      "name": "departments",
+      "item": [
+        {
+          "name": "get departments in employees page",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://0.0.0.0:3001/departments",
+              "protocol": "http",
+              "host": ["0", "0", "0", "0"],
+              "port": "3001",
+              "path": ["departments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get departments in configs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://0.0.0.0:3001/configurations/general/departments",
+              "protocol": "http",
+              "host": ["0", "0", "0", "0"],
+              "port": "3001",
+              "path": ["configurations", "general", "departments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update departments",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"departments\": [\n             {\n            \"id\": \"9uqanso4uiqrqbjy6no3\",\n            \"name\": \"営業 1\"           \n        },        \n        {\n            \"id\": \"p00hvxocdld6n7wwu9si\",\n            \"name\": \"営業 2\"           \n        },\n        {        \n            \"name\": \"営業 3\"           \n        }         \n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://0.0.0.0:3001/configurations/general/departments",
+              "protocol": "http",
+              "host": ["0", "0", "0", "0"],
+              "port": "3001",
+              "path": ["configurations", "general", "departments"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "jobs",
+      "item": [
+        {
+          "name": "get jobs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://0.0.0.0:3001/groups",
+              "protocol": "http",
+              "host": ["0", "0", "0", "0"],
+              "port": "3001",
+              "path": ["groups"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get jobs in configs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://0.0.0.0:3001/configurations/general/jobs",
+              "protocol": "http",
+              "host": ["0", "0", "0", "0"],
+              "port": "3001",
+              "path": ["configurations", "general", "jobs"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "groups",
+      "item": [
+        {
+          "name": "create group",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"main\": false,\n  \"name\": \"テストA\",\n  \"kana\": \"\",\n  \"zipcode\": \"\",\n  \"prefecture\": \"\",\n  \"city\": \"\",\n  \"street\": \"\",\n  \"building\": \"\",\n  \"tel\": \"\",\n  \"fax\": \"\",\n  \"url\": \"\",\n  \"presidentRole\": \"\",\n  \"presidentName\": \"\",\n  \"presidentKana\": \"\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://0.0.0.0:3001/configurations/groups",
+              "protocol": "http",
+              "host": ["0", "0", "0", "0"],
+              "port": "3001",
+              "path": ["configurations", "groups"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get group by id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://0.0.0.0:3001/configurations/groups/test",
+              "protocol": "http",
+              "host": ["0", "0", "0", "0"],
+              "port": "3001",
+              "path": ["configurations", "groups", "test"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update group",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"main\": true,\n  \"name\": \"test\",\n  \"kana\": \"\",\n  \"zipcode\": \"\",\n  \"prefecture\": \"\",\n  \"city\": \"\",\n  \"street\": \"\",\n  \"building\": \"\",\n  \"tel\": \"\",\n  \"fax\": \"\",\n  \"url\": \"\",\n  \"presidentRole\": \"\",\n  \"presidentName\": \"\",\n  \"presidentKana\": \"\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://0.0.0.0:3001/configurations/groups/test",
+              "protocol": "http",
+              "host": ["0", "0", "0", "0"],
+              "port": "3001",
+              "path": ["configurations", "groups", "test"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get groups",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://0.0.0.0:3001/groups",
+              "protocol": "http",
+              "host": ["0", "0", "0", "0"],
+              "port": "3001",
+              "path": ["groups"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete group by id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://0.0.0.0:3001/configurations/groups/test",
+              "protocol": "http",
+              "host": ["0", "0", "0", "0"],
+              "port": "3001",
+              "path": ["configurations", "groups", "test"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "employees",
+      "item": [
+        {
+          "name": "create employee",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstName\": \"Jifa 5\",\n    \"lastName\": \"Jiang\",\n    \"employeeCode\": \"F-001\",\n    \"gender\": \"male\",\n    \"startDate\": \"2018-01-01\",\n    \"contractType\": \"1\",\n    \"payType\":\"1\",\n    \"group\": \"test\",\n    \"periodCollection\": \"test\",\n    \"status\": \"1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://0.0.0.0:3001/employees",
+              "protocol": "http",
+              "host": ["0", "0", "0", "0"],
+              "port": "3001",
+              "path": ["employees"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get employees",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://0.0.0.0:3001/employees",
+              "protocol": "http",
+              "host": ["0", "0", "0", "0"],
+              "port": "3001",
+              "path": ["employees"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get employee",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://0.0.0.0:3001/employees/test",
+              "protocol": "http",
+              "host": ["0", "0", "0", "0"],
+              "port": "3001",
+              "path": ["employees", "test"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get employees with params",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://0.0.0.0:3001/employees?group=test",
+              "protocol": "http",
+              "host": ["0", "0", "0", "0"],
+              "port": "3001",
+              "path": ["employees"],
+              "query": [
+                {
+                  "key": "group",
+                  "value": "test"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "SQL",
+      "item": [
+        {
+          "name": "sql playground",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "root",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "root",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "ns",
+                "value": "test",
+                "type": "text"
+              },
+              {
+                "key": "db",
+                "value": "test",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "select * from Employee;"
+            },
+            "url": {
+              "raw": "http://localhost:8001/sql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8001",
+              "path": ["sql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "info for SurrealDB",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "root",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "root",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "ns",
+                "value": "test",
+                "type": "text"
+              },
+              {
+                "key": "db",
+                "value": "test",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "info for DB;"
+            },
+            "url": {
+              "raw": "http://localhost:8001/sql",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8001",
+              "path": ["sql"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete collection / table",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "root",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "root",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "ns",
+                "value": "test",
+                "type": "text"
+              },
+              {
+                "key": "db",
+                "value": "test",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "create PayrollGroup SET\nperiodCollection=PeriodCollection:9o07vj854inf0lenxc99,\npayDate=\"2023-01-31\",\nperiodDate=\"2022-12-31\",\nfixed=false;"
+            },
+            "url": {
+              "raw": "http://0.0.0.0:8001/key/DeductionItemsDefinition",
+              "protocol": "http",
+              "host": ["0", "0", "0", "0"],
+              "port": "8001",
+              "path": ["key", "DeductionItemsDefinition"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "seed data",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "password",
+                  "value": "root",
+                  "type": "string"
+                },
+                {
+                  "key": "username",
+                  "value": "root",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "ns",
+                "value": "test",
+                "type": "text"
+              },
+              {
+                "key": "db",
+                "value": "test",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "\n-- Account\ncreate Account:test SET\nname=\"amami.dev.01\",\nrole=\"operator\";\n\n-- Group\n\ncreate Group:test SET\nmain = true,\nname = \"Amami Dev\",\nkana = \"アマミ カイハツ\";\n\n-- Department\n\ncreate Department:test SET name=\"DEV\";\ncreate Department SET name=\"Sales\";\ncreate Department SET name=\"Others\";\n\n-- Job\n\ncreate Job:test SET name=\"Dev\";\ncreate Job SET name=\"Sales\";\ncreate Job SET name=\"Others\";"
+            },
+            "url": {
+              "raw": "http://0.0.0.0:8001/sql",
+              "protocol": "http",
+              "host": ["0", "0", "0", "0"],
+              "port": "8001",
+              "path": ["sql"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

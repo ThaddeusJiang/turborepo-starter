@@ -1,0 +1,31 @@
+{
+  "name": "turborepo-starter",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "dotenv -- turbo run build",
+    "clean": "turbo run clean",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint": "turbo run lint",
+    "dev": "dotenv --  turbo run dev --parallel",
+    "test": "dotenv --  turbo run test",
+    "test:ci": "dotenv --  turbo run test:ci",
+    "storybook": "turbo run storybook",
+    "chromatic": "turbo run chromatic"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^6.0.0",
+    "eslint-config-custom": "*",
+    "prettier": "latest",
+    "turbo": "latest"
+  },
+  "packageManager": "yarn@1.22.17",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}

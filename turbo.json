@@ -1,0 +1,31 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "outputs": ["dist/**", ".next/**", "public/dist/**"],
+      "dependsOn": ["^build"],
+      "env": ["NEXT_PUBLIC_API_HOST", "NEXT_PUBLIC_API_MOCKING"]
+    },
+    "storybook": {},
+    "chromatic": {},
+    "test": {
+      "outputs": [],
+      "dependsOn": ["build"]
+    },
+    "test:ci": {
+      "outputs": ["coverage/**"],
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "dev": {
+      "cache": false
+    },
+    "clean": {
+      "cache": false
+    }
+  },
+  "globalDependencies": [".env"]
+}

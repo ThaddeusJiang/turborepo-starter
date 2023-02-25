@@ -1,0 +1,15 @@
+{
+  "name": "eslint-config-custom-server",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.46.0",
+    "@typescript-eslint/parser": "^5.46.0",
+    "eslint": "^8.29.0",
+    "typescript": "^4.9.4"
+  }
+}

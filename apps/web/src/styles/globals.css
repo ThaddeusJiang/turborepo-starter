@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.native-inset-0 {
+  inset: 0;
+}
+
+.dialog-overlay {
+  @apply fixed native-inset-0 z-10 bg-black bg-opacity-50 transition-opacity duration-300;
+}
+
+.dialog-content {
+  @apply fixed z-50
+            w-[95vw] max-w-screen-xl rounded-lg p-4 md:w-full
+            top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]
+            bg-white
+            focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75;
+}
+
+.dialog-title {
+  @apply text-lg font-medium text-gray-900;
+}
+
+.dialog-description {
+  @apply mt-2 text-sm font-normal text-gray-700;
+}
+
+.dialog-close-x {
+  @apply absolute top-3.5 right-3.5 font-mono;
+}
+
+.icon {
+  @apply inline-block w-5 h-5;
+}

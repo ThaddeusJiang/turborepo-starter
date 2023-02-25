@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+  db:
+    container_name: db
+    image: surrealdb/surrealdb:latest
+    restart: always
+    ports:
+      - 8000:8000
+    networks:
+      - app_network
+    command: ["start", "--user", "root", "--pass", "root"]
+
+  web:
+    container_name: web
+    image: thaddeusjiang/turbo-web:latest
+    restart: always
+    ports:
+      - 80:3000
+    networks:
+      - app_network
+
+  api:
+    container_name: api
+    image: thaddeusjiang/turbo-api:latest
+    restart: always
+    ports:
+      - 3001:3001
+    networks:
+      - app_network
+
+# Define a network, which allows containers to communicate
+# with each other, by using their container name as a hostname
+networks:
+  app_network:
+    external: true

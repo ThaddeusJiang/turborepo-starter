@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  test_surrealdb:
+    container_name: test_surrealdb
+    image: surrealdb/surrealdb:latest
+    restart: always
+    ports:
+      - 8002:8000
+    networks:
+      - app_network
+    command: ["start", "--user", "root", "--pass", "root"]
+
+# Define a network, which allows containers to communicate
+# with each other, by using their container name as a hostname
+networks:
+  app_network:
+    external: true
